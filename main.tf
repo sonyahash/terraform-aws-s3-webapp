@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket" {
-  bucket_prefix = "${var.prefix}-${var.name}"
+  bucket_prefix = "sonya-pieklik"
 
   force_destroy = true
 }
@@ -45,7 +45,7 @@ EOF
 }
 
 resource "aws_s3_object" "webapp" {
-  acl          = "public-read"
+  acl          = ""
   key          = "index.html"
   bucket       = aws_s3_bucket.bucket.id
   content      = file("${path.module}/assets/index.html")
