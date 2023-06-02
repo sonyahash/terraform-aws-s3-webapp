@@ -45,7 +45,7 @@ EOF
 }
 
 resource "aws_s3_object" "webapp" {
-  acl          = ""
+  acl          = "public-read-write"
   key          = "index.html"
   bucket       = aws_s3_bucket.bucket.id
   content      = file("${path.module}/assets/index.html")
